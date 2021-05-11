@@ -10,6 +10,15 @@
     >
       <q-tooltip content-class="bg-accent">This Is going to generate forecast for thr next 24hours (Hourly) </q-tooltip>
     </q-btn>
+    <q-banner class="bg-grey-3">
+      <template v-slot:avatar>
+        <q-icon name="eva-umbrella-outline" color="primary" />
+      </template>
+      {{forecastBanner}}
+      <template v-slot:action>
+        <q-btn flat color="primary" :label="temp" />
+      </template>
+    </q-banner>
   </div>
 </template>
 
@@ -31,7 +40,9 @@ export default {
       percentage2: 0,
       query:'',
       loading3: false,
-      percentage3: 0
+      percentage3: 0,
+      forecastBanner:'Display Daily Forecast',
+      temp:0
     }
   },
   methods: {
@@ -42,11 +53,11 @@ export default {
       axios.get(apiUrl)
         .then(response => {
           let temp = response.data.current.temp
-
-          if ( temp >= 16){
             let message = `The temperature in ${city} now is ${temp} °C`
-          // this.showNotif(message, 'positive')
-          }
+          this.showNotif(message, 'green')
+
+          this.forecastBanner = `The temperature in ${city} now is ${temp} °C`
+          this.temp =  temp+'°C'
           this.color = 'green'
         }).catch(error => {
         let message = `Please enter a valid City not ${city}`
@@ -54,6 +65,7 @@ export default {
         console.log(`Error:  ${error}`)
       })
 
+      console.log(JSON.stringify(this.$store.state.forecasts.dusseldorf))
       this.query = ''
     },
     showNotif (message , color) {
@@ -73,7 +85,9 @@ export default {
       })
     },
   },
+  mounted() {
 
+  }
 }
 </script>
 

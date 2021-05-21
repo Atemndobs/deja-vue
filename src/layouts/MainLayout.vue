@@ -27,6 +27,16 @@
           color="black"
           :style="menuButtonColor"
         />
+              <q-btn
+                to="/trade"
+                icon="eva-percent-outline"
+                round
+                :size="iconSize"
+                dense
+                flat
+                color="black"
+                :style="menuButtonColor"
+              />
 <!--        <q-btn
           to="/price"
           icon="eva-bell-outline"
@@ -46,9 +56,9 @@
           size="15px"
           dense
           flat
-                :style="menuButtonColor"
-          v-show="this.$auth.check() && this.$auth.user().role === 1"
+          :style="menuButtonColor"
         />
+              <!--        v-show="this.$auth.check() && this.$auth.user().role === 1" -->
 <!--        <q-btn
           to="/video"
           icon="eva-video-outline"

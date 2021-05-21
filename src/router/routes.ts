@@ -11,6 +11,7 @@ const routes: RouteConfig[] = [
       { path: '/battery', component: () => import('pages/PageBattery.vue') },
       { path: '/settings', component: () => import('pages/PageSettings.vue') },
       { path: '/privacy', component: () => import('pages/Privacy.vue') },
+      { path: '/trade', component: () => import('pages/PageTrade.vue') },
 
       { path: '/audio', component: () => import('pages/PageAudio.vue') },
       { path: '/price', component: () => import('pages/PageTracker.vue') },

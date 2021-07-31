@@ -8,14 +8,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { configure } = require('quasar/wrappers');
  API_PRODUCTION = 'https://atemkeng.com/api'
- API_LOCAL = 'http://127.0.0.1:8000/api'
+ API_LOCAL = 'http://127.0.0.1/api'
  API_DOCKER = 'http://localhost:8090/api'
  API_VALET = 'https://pixelate.app/api'
  API_VIDEO = 'http://localhost:8012/api/v1/'
  API_USERS = 'http://localhost:8011/api/V1/' //double-check the endpoint again
 GOOGLE_API_KEY = 'YOUR_GOOGLE_API_KEY'
 GOOGLE_API_LIBS = 'places,drawing,visualization'
-PUSHER_KEY = 'YOUR_PUSHER_KEY'
+PUSHER_KEY = 'local'
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -56,7 +56,7 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       env: {
-        API:API_DOCKER,
+        API:API_LOCAL,
         // API:API_PRODUCTION
         VIDEO:API_VIDEO,
         GOOGLE:{

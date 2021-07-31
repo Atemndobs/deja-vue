@@ -750,7 +750,8 @@ export default {
       const apiUrl = process.env.API+"/user/follow/"+authorId
       let data = {
         author_id: authorId,
-        position :this.posts.indexOf(post)
+        position :this.posts.indexOf(post),
+        user_id : userId
       }
       axios.post(apiUrl, data)
         .then(response => {
@@ -1089,11 +1090,11 @@ export default {
   },
 
   mounted() {
-    this.pusherData()
+
     if (process.env.API.PROD){
       this.pusherData()
     }
-
+    this.pushEcho()
   },
 
 };

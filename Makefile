@@ -1,7 +1,7 @@
 
 install-echo:
 	cp quasar.conf_dev.js quasar.conf.js
-	npm install
+	#npm install
 	quasar dev
 
 install-pusher:

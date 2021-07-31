@@ -56,7 +56,7 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       env: {
-        API:API_DOCKER,
+        API:API_LOCAL,
         // API:API_PRODUCTION
         VIDEO:API_VIDEO,
         GOOGLE:{
